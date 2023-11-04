@@ -34,7 +34,8 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': '*',
-        'Access-Control-Allow-Methods': 'GET PUT'
+        'Access-Control-Allow-Methods': 'GET PUT',
+        'Authorization': `Basic ${localStorage.getItem("authorization_token")}`,
       },
       params: {
         name: encodeURIComponent(file.name),
